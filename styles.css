@@ -1,0 +1,29 @@
+
+.b1 {
+    border-right-style: solid;
+    }
+
+.b2 {
+    border-top-style: solid;
+    }
+
+.centralizado
+{
+text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 40%;
+    border-radius: 10px;
+}
+
+td, th {
+    padding: 80px;
+    cursor: pointer;
+}
+
+td:hover {
+background-color: #ddd;
+}
