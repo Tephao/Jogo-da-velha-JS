@@ -14,9 +14,7 @@ text-align: center;
 
 table {
     border-collapse: collapse;
-    margin-top: 20px;
-    width: 40%;
-    border-radius: 10px;
+    margin: auto;
 }
 
 td, th {

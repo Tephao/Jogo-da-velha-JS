@@ -8,32 +8,49 @@
 	    <link rel="shortcut icon" type="imagex/png" href="x.ico">
     </head>
     <body>
-        <h1>-------------JOGO DA VELHA-------------<h1>
+        <h1 class="centralizado">-------------JOGO DA VELHA-------------<h1>
         <table>
             <thead>
                 </thead>
             <tbody>
                 <tr>
-                    <td class="b1" onclick="adiciona(this)" id="1"> </td>
-                    <td class="b1" onclick="adiciona(this)"> </td>
-                    <td on onclick="adiciona(this)"></td>
+                    <td class="b1" onclick="adiciona(this); tabuleiro.fc1=1" id="1"> </td>
+                    <td class="b1" onclick="adiciona(this)" id="2"> </td>
+                    <td on onclick="adiciona(this)" id="3"></td>
                 </tr>
                 <tr>
-                    <td class="b1 b2" onclick="adiciona(this)"> </td>
-                    <td class="b1 b2" onclick="adiciona(this)"> </td>
-                    <td class="b2" onclick="adiciona(this)"> </td>
+                    <td class="b1 b2" onclick="adiciona(this)" id="4"> </td>
+                    <td class="b1 b2" onclick="adiciona(this)" id="5"> </td>
+                    <td class="b2" onclick="adiciona(this)" id="6"> </td>
                 </tr>
                 <tr>
-                    <td class="b1 b2" onclick="adiciona(this)"> </td>
-                    <td class="b1 b2" onclick="adiciona(this)"> </td>
-                    <td class="b2" onclick="adiciona(this)"> </td>
+                    <td class="b1 b2" onclick="adiciona(this)" id="7"> </td>
+                    <td class="b1 b2" onclick="adiciona(this)" id="8"> </td>
+                    <td class="b2" onclick="adiciona(this)" id="9"> </td>
                 </tr>
             </tbody>
         </table>
+        
         <script>
+            let vez = 'X';
+            let tabuleiro = {fc1: 0, fc2: 0, fc3: 0, fc4: 0, fc5: 0, fc6: 0, fc7: 0, fc8: 0, fc9: 0};
+
             function adiciona(cell){
+
+                if(vez == 'X') {
                 cell.innerHTML += ` <img src="x.png" width:"10" height:"50" /> `;
-            }
+                vez = 'O';
+                //cell.setAttribute('disabled', '');
+                }
+
+                else {
+                cell.innerHTML += ` <img src="o.png" width:"10" height:"50" /> `;
+                vez = 'X';
+                }
+
+                //if(tabuleiro.fc1==1)
+                alert("PRIMEIRO QUADRO: " + tabuleiro.fc1);
+                                    }
         </script>
     </body>
 </html>
