@@ -8,14 +8,22 @@
 	    <link rel="shortcut icon" type="imagex/png" href="x.ico">
     </head>
     <body>
-        <h1 class="centralizado">-------------JOGO DA VELHA-------------<h1>
+
+        <button id="restartButton" onclick="window.location.reload(true)">Reiniciar Jogo</button>
+
+        <label>
+            <h3>Vez do jogador >> X</h3>
+        </label>
+
+        <h2 class="centralizado">-------------JOGO DA VELHA-------------</h2>
+
         <table>
             <thead>
                 </thead>
             <tbody>
                 <tr>
                     <td class="b1" onclick="adiciona(this); tabuleiro.fc1=1" id="1"> </td>
-                    <td class="b1" onclick="adiciona(this)" id="2"> </td>
+                    <td class="b1" onclick="adiciona(this); tabuleiro.fc1=2" id="2"> </td>
                     <td on onclick="adiciona(this)" id="3"></td>
                 </tr>
                 <tr>
@@ -30,26 +38,27 @@
                 </tr>
             </tbody>
         </table>
-        
+
         <script>
             let vez = 'X';
             let tabuleiro = {fc1: 0, fc2: 0, fc3: 0, fc4: 0, fc5: 0, fc6: 0, fc7: 0, fc8: 0, fc9: 0};
+            let label = document.querySelector("label");
 
             function adiciona(cell){
 
                 if(vez == 'X') {
                 cell.innerHTML += ` <img src="x.png" width:"10" height:"50" /> `;
                 vez = 'O';
-                //cell.setAttribute('disabled', '');
+                label.innerHTML = "<h3>Vez do jogador >> O</h3>";
                 }
 
                 else {
                 cell.innerHTML += ` <img src="o.png" width:"10" height:"50" /> `;
                 vez = 'X';
+                label.innerHTML= "<h3>Vez do jogador >> X</h3>";
                 }
 
-                //if(tabuleiro.fc1==1)
-                alert("PRIMEIRO QUADRO: " + tabuleiro.fc1);
+               // alert("PRIMEIRO QUADRO: " + tabuleiro.fc1);
                                     }
         </script>
     </body>
